@@ -15,28 +15,26 @@ if __name__ == "__main__":
     data_folder = args['input']
     output_dir = args['output']
 
-    #CREAMOS EL CLASSIFCATION CORPUS:  https://github.com/flairNLP/flair/blob/master/resources/docs/TUTORIAL_6_CORPUS.md#reading-a-text-classification-dataset
+    #CREATE CLASSIFCATION CORPUS:  https://github.com/flairNLP/flair/blob/master/resources/docs/TUTORIAL_6_CORPUS.md#reading-a-text-classification-dataset
     column_name_map = {4: "text", 5: "label_topic"}
     corpus = CSVClassificationCorpus(data_folder, column_name_map, skip_header=True, delimiter=',', label_type="class")
     label_dict = corpus.make_label_dictionary(label_type="class")
 
-    #OBTENEMOS LOS EMBEDDINGS PREENTRENADOS
+    # OBTAIN PRETRAINED EMBEDDINGS
     word_embeddings = [
-        # VECTORES:
-        # FASTTEXT ENTRENADOS EN WIKIPEDIA
+        # FASTTEXT TRAINED IN WIKIPEDIA
         WordEmbeddings('es'),
-        # WORDEMBEDDINGS PERSONALIZADOS
+        # WORDEMBEDDINGS PERSONALIZED
         #WordEmbeddings(dir_embeddings),
 
         # CHARACTER EMBEDDIGNS
         #CharacterEmbeddings(),
 
-        # FLAIR EMBEDDINGS (se necesitan tanto fordward como backward):
-        # PERSONALIZADAS
+        # FLAIR EMBEDDINGS (fordward and backward):
         #FlairEmbeddings(forward_dir),
         #FlairEmbeddings(backward_dir),
 
-        # GENERADOS CON WIKIPEDIA
+        # GENERATED WITH WIKIPEDIA
         FlairEmbeddings('es-forward'),
         FlairEmbeddings('es-backward')
     ]
@@ -46,12 +44,12 @@ if __name__ == "__main__":
                                                                        reproject_words=True,
                                                                        rnn_type='LSTM',
                                                                        )
-    #CREAMOS EL TEXT CLASSIFIER
+    #CREATE TEXT CLASSIFIER
     classifier = TextClassifier(document_embeddings, label_dictionary=label_dict, label_type="class")
 
-    #INICIALIZAOS EL TEXT CLASSIFIER TRAINER
+    #INITIALIZE TEXT CLASSIFIER TRAINER
     trainer = ModelTrainer(classifier, corpus)
 
-    #EMPEZAMOS EL ENTRENAMIENTO
+    #START TRAINING
     trainer.train(output_dir, patience=10, mini_batch_size=50, learning_rate=0.01, max_epochs=100, train_with_dev=False)
 
