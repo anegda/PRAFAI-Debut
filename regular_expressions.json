@@ -1,0 +1,328 @@
+{
+  "mujer": {
+    "concepto": "mujer",
+    "regex": "(s(eño)?ra|mujer)"
+  },
+  "hombre": {
+    "concepto": "hombre",
+    "regex": "(s(eño)?r|hombre|var(o|ó)n)"
+  },
+  "edad":{
+    "concepto": "edad",
+    "regex": "(\\d+(?= años?))"
+  },
+  "talla": {
+    "concepto": "altura",
+    "regex": "(alt(ura|o)|talla|mide)"
+  },
+  "imc": {
+    "concepto": "imc",
+    "regex": "(imc|(i|í)ndice( de)? masa corporal)"
+  },
+  "peso": {
+    "concepto": "peso",
+    "regex": "(pes(a|o)|kg)"
+  },
+  "urea": {
+    "concepto": "urea",
+    "regex": "((srm-)?urea)",
+    "rango": "\\d{1,3}((,|\\.)\\d+)?"
+  },
+  "creatinina": {
+    "concepto": "creatinina",
+    "regex": "((srm-)?cr(eat(inina)?)?)",
+    "rango": "\\d(,|\\.)\\d+"
+  },
+  "albumina":{
+    "concepto": "albumina",
+    "regex": "((srm-)?alb((u|ú)mina)?)",
+    "rango": "\\d(,|\\.)\\d+"
+  },
+  "glucosa": {
+    "concepto": "glucosa",
+    "regex": "((srm-)?gl(c|u((c|k)osa|cemia)?))",
+    "rango": "\\d+"
+  },
+  "hba1c": {
+    "concepto": "hba1c",
+    "regex": "((san-)?hemoglobina( gl(((i|u)cosilada)|icada))|(hb)?a1c|glicada)",
+    "rango": "\\d(,|\\.)\\d+"
+  },
+  "potasio": {
+    "concepto": "potasio",
+    "regex": "((srm-)?potasio|k\\+?)",
+    "rango": "\\d{1,2}(,|\\.)\\d+"
+  },
+  "calcio": {
+    "concepto": "calcio",
+    "regex": "(((srm-)?calcio|ca)( \\(?total\\)?)?)",
+    "rango": "\\d{1,2}(,|\\.)\\d+"
+  },
+  "hdl": {
+    "concepto": "hdl",
+    "regex": "(((srm-)?col(esterol)?(( |-)(hdl|bueno)))|(?<!\\Wno( |-))(hdl( |-)colesterol)|(lipoprote(i|í)na +de +alta +densidad)|(?<!\\W(no|menos)( |-))(c(ol)?-)?HDL(-c(ol)?)?)",
+    "rango": "\\d{2,3}((,|\\.)\\d+)?"
+  },
+  "no_hdl": {
+    "concepto": "no-hdl",
+    "regex": "(((srm-)?col(esterol)?(( |-)(no|total menos))( |-)hdl)|(no( |-)hdl))",
+    "rango": "\\d{2,3}((,|\\.)\\d+)?"
+  },
+  "ldl": {
+    "concepto": "ldl",
+    "regex": "((((srm-)?c(ol(esterol)?)?( |-)(ldl|malo))|(ldl))(( |-)calc(ulado)?)?)",
+    "rango": "\\d{2,3}((,|\\.)\\d+)?"
+  },
+  "colesterol": {
+    "concepto": "colesterol",
+    "regex": "((?<!(ldl|hdl)( |-))(((srm-)?colesterol)(?!( |-| total )bueno|menos|malo|ldl|hdl|no hdl|no-hdl)))",
+    "rango": "\\d{1,4}((,|\\.)\\d+)?"
+  },
+  "ntprobnp": {
+    "concepto": "ntprobnp",
+    "regex": "(p(é|e)ptido natriur(é|e)tico (de )?tipo b|(nt-?)?probnp)",
+    "rango": "\\d{1,4}((,|\\.)\\d+)?"
+  },
+  "troponina_tnt": {
+    "concepto": "troponina-t",
+    "regex": "(((((srm-)?troponina t( card(í|i)aca( ultrasensible)?)?( \\(?TNT\\)?)?)|(c|hs)?\\(?TNT\\)?))( ?us)?|troponinas)",
+    "rango": "\\d{1,4}((,|\\.)\\d+)?"
+  },
+  "fibrinogeno": {
+    "concepto": "fibrinógeno",
+    "regex": "((pla-)?fibrin(ó|o)geno( \\(? ?funcional ?\\)?)?)",
+    "rango": "\\d{2,4}((,|\\.)\\d+)?"
+  },
+  "leucocitos": {
+    "concepto": "leucocitos",
+    "regex": "((san-)?leu(k|c)o((z|c)ito|cyte)?s|(recuento de )?gl(ó|o)bulos blancos|c(é|e)lulas blancas|wbc)",
+    "rango": "(\\d(\\.|,)\\d+|\\d{1,5}((,|\\.|\\s*)\\d+)?)"
+  },
+  "pcr": {
+    "concepto": "PCR",
+    "regex": "(PCR|(srm-)?prote(í|i)na( |-)C( |-)react(iva)?(( |-)\\(?PCR\\)?)?)",
+    "rango": "(\\d(,|\\.)\\d*|\\d{1,4}((,|\\.|\\s*)\\d+)?)"
+  },
+  "tsh": {
+    "concepto": "TSH",
+    "regex": "((srm-)?(tsh|tirotropina( \\(tsh\\))?|hormona (estimulante de la tiroides|tirotropa)))",
+    "rango": "\\d(,|\\.)\\d+"
+  },
+  "sodio": {
+    "concepto": "sodio",
+    "regex": "(((srm|san)-|i(ó|o)n\\s+)?sodio(\\s+s(é|e)rico)?|na\\+?)",
+    "rango": "\\d{2,3}((,|\\.)\\d+)?"
+  },
+  "ecocardiograma": {
+    "concepto": "ecocardiograma",
+    "regex": "(eco ?(cardiograma|cardiograf(í|i)a|cardio)|cardiograma|ETT)"
+  },
+  "electrocardiograma": {
+    "concepto": "electrocardiograma",
+    "regex": "(electro(cardiograma|cardiograf(í|i)a)?|E(C|K)G|Holter(( |-)(E(K|C)G))?)"
+  },
+  "fevi": {
+    "concepto": "FEVI",
+    "regex": "(fevi|f\\.(e|s)\\.|fracci(ó|o)n de eyecci(ó|o)n|funci(ó|o)n sist(ó|o)lica( ventricular izquierda| de VI)?|FE(?= \\d{1,2}%))",
+    "regex_2": "((fevi|f\\.?e\\.?|fracci(ó|o)n de eyecci(ó|o)n|F\\.?S\\.?|funci(ó|o)n sist(ó|o)lica( ventricular izquierda| de VI)?)( global( y segmentaria)?)?:?\\s*(es |est(á|a) )?(((conservada|normal|buena|recuperada|preservada|l(í|i)mite|(ligeramente |levemente |moderadamente |severamente |gravemente |muy |ligera-moderadamente |leve-moderadamente |moderada-gravemente |moderada-severamente )?((reducid|disminuid|deprimid)(a|o))(ligeramente| levemente| moderadamente| severamente| gravemente|ligera-moderadamente |leve-moderadamente |moderada-gravemente |moderada-severamente )?)(\\s*\\(?<?\\s*\\d+%?\\)?)?)|(\\(?<?\\s*\\d+%?\\)?))|(reducci|depresi|disminuci)(o|ó)n (leve |ligera |moderada |severa |grave |ligera-moderada |leve-moderada |moderada-severa |moderada-grave )?(de (la )?)?(fevi|f\\.?e\\.?|fracci(ó|o)n de eyecci(ó|o)n|F\\.?S\\.?|funci(ó|o)n sist(ó|o)lica( ventricular izquierda| de VI)?)( global( y segmentaria)?)?|bue?na (fevi|f\\.?e\\.?|fracci(ó|o)n de eyecci(ó|o)n|F\\.?S\\.?|funci(ó|o)n sist(ó|o)lica))"
+  },
+  "diametro_ai": {
+    "concepto": "diámetro-ai",
+    "regex": "(di(a|á)metro)?\\s*(a(\\.|ur((í|i)cula)?)?\\s*i(\\.|zquierda|zda)?):?\\s*\\(?\\s*\\d{2}(?!cm)\\s*(mm)?\\s*\\)?",
+    "regex_2": "((di(a|á)metro)?\\s*(a(\\.|ur((í|i)cula)?)?\\s*i(\\.|zquierda|zda)?):?\\s*\\(?\\s*\\d{2}(?!cm)\\s*(mm)?\\s*\\)?)"
+  },
+  "area_ai": {
+    "concepto": "área-ai",
+    "regex": "((((leve|ligera|moderada|severa|grave)\\s*)?dilataci(o|ó)n\\s*((leve|ligera|moderada|severa|grave)\\s*)?((de|en)\\s*)?(la\\s*)?(a(ur((í|i)cula)?)?\\s*i(zquierda|zda?|zq)?|a\\.?i\\.?))|((a(ur((í|i)cula)?)?\\s*i(zquierda|zda?|zq)?|a\\.?i\\.?)\\s*((leve|ligera|moderada|severa|grave)(mente)? )?(de tamaño )?dilatada( (leve|ligera|moderada|severa|grave)(mente)?)?))(\\s*\\(?\\s*\\d+\\s*cm2\\)?)?",
+    "regex_2": "(?:((((leve|ligera|moderada|severa|grave)\\s*)?dilataci(o|ó)n\\s*((leve|ligera|moderada|severa|grave)\\s*)?((de|en)\\s*)?(la\\s*)?(a(ur((í|i)cula)?)?\\s*i(zquierda|zda?|zq)?|a\\.?i\\.?))|((a(ur((í|i)cula)?)?\\s*i(zquierda|zda?|zq)?|a\\.?i\\.?)\\s*((leve|ligera|moderada|severa|grave)(mente)? )?(de tamaño )?dilatada( (leve|ligera|moderada|severa|grave)(mente)?)?))(\\s*\\(?\\s*\\d+\\s*cm2\\)?)?)"
+  },
+  "tamaño_ai": {
+    "concepto": "tamaño-ai",
+    "regex": "(di(á|a)metro|(á|a)rea|dilataci(ó|o)n( ligera| leve| moderada| grave| severa)?) (de (la )?)?a(ur(í|i)cula |\\.)?i(z((q(ui(erda)?)?)|da?)|\\.)?|a(ur(í|i)cula |\\.)?i(z((q(ui(erda)?)?)|da?)|\\.)? (((ligera|leve|moderada|grave|severa)(mente)? |de tamaño )?dilatada|con dilatación( ligera| leve| moderada| grave| severa)?)"
+  },
+  "depresion": {
+    "concepto": "depresión",
+    "regex": "(((episodios?|estado|trastorno) de )?depresi(ó|o)n( mayor| cl(í|i)nica|-ansiedad| cr(ó|o)nica)?|((trastorno|episodios?|estado) )?depresivo( mayor)?)"
+  },
+  "alcohol": {
+    "concepto": "alcohol",
+    "regex": "(((consumo excesivo|abuso|dependencia)( del?)? |h(á|a)bito )(alcohol(ico)?|OH)|etilismo|alcohol(ismo|ico)|bebedora?)"
+  },
+  "drogodependencia": {
+    "concepto": "drogodependencia",
+    "regex": "(drogodependencia|(trastorno por )?dependencia de (sustancias|drogas)|(toma |consumo de |(adic(to|ci(o|ó)n)) a (las? )?|usuario de )drogas?( por vía parenteral)?|(A|U)DVP)"
+  },
+  "ansiedad": {
+    "concepto": "ansiedad",
+    "regex": "(((trastorno|estado|síndrome) (de )?)?(ansiedad|angustia)( generalizada)?|TAG|(estados? |episodios? )?ansiosos?|depresi(ó|o)n-ansiedad)"
+  },
+  "demencia": {
+    "concepto": "demencia",
+    "regex": "(demencia|deterioro cognitivo|(enfermedad de )?alzheimer|(trastorno|enfermedad|demencia) por cuerpos de Lewy|par(á|a)lisis supranuclear pontina)"
+  },
+  "insuficiencia_renal": {
+    "concepto": "ERC",
+    "regex": "((enfermedad|insuficiencia|falla|fracaso) renal( cr(ó|o)nica)?|ERC( ?[12345](a|b)?)?)"
+  },
+  "menopausia": {
+    "concepto": "menopausia",
+    "regex": "(climaterio femenino|estado menop(a|á)usico|menopausia)"
+  },
+  "osteoporosis": {
+    "concepto": "osteoporosis",
+    "regex": "(osteoporosis( nsps)?|(p(é|e)rdida|disminuci(ó|o)n|deterioro) (de (la )?)?(densidad )?(ó|o)se(o|a)|OP)"
+  },
+  "fumador": {
+    "concepto": "fumador",
+    "regex": "(fuma(dora?|r)?|(consumo de |adicci(o|ó)n (al |a los )?)?(tabaco|cigarrillos?|cigarros?)|tabaquismo|paquetes?( |-)(d(í|i)a(rios)?|año|mes|semanal?)|años?( |-)paquetes?)"
+  },
+  "sahos": {
+    "concepto": "SAHOS",
+    "regex": "(sah?o?s|shrp|ahs|(s(í|i)ndrome de )?apnea(( |-)hipopnea| obstructiva)?( del)? sueño|trastornos? respiratorios?( del)? sueño|enfermedad de pickwick)"
+  },
+  "hipertiroidismo": {
+    "concepto": "hipertiroidismo",
+    "regex": "(hipertiroidismo|tirotox(icosis)?|Graves( |-)Basedow)"
+  },
+  "epoc": {
+    "concepto": "EPOC",
+    "regex": "((Ges)?epoc|gold|enfermedad pulmonar obstructiva cr(ó|o)nica|bronqu(itis|(í|i)tic(o|a)) cr(o|ó)nic(o|a)|broncopat(í|i)a obstructiva|enfisema(toso)?)"
+  },
+  "diabetes_tipo1": {
+    "concepto": "DM1",
+    "regex": "((DM|diabetes( mellitus)?)((( tipo)? ?1)| insulinodependiente| (infanto( |-))?juvenil)|dmid)"
+  },
+  "diabetes_tipo2": {
+    "concepto": "DM2",
+    "regex": "((DM|diabetes( mellitus)?)((( tipo)? ?2)| no insulinodependiente|( del?)? adulto)|dmnid|diab(e|é)tic(o|a))"
+  },
+  "dislipidemia": {
+    "concepto": "dilipidemia",
+    "regex": "(dislip(id)?emia|hiper(lip|triglicerid)emia|niveles (elevados|altos) de (l(í|i)pidos|triglic(é|e)ridos)|(l(í|i)pidos|triglic(é|e)ridos)( elevados| altos)|(?<!\\/)(?<!\\/ )(D|H)L)"
+  },
+  "hipercolesterolemia": {
+    "concepto": "hipercolesterolemia",
+    "regex": "(hipercolesterolemia|colesterol (alto|elevado)|niveles (elevados|altos) de colesterol)"
+  },
+  "flutter": {
+    "concepto": "flutter",
+    "regex": "(flut?ter( auricular)?|aleteo auricular)"
+  },
+  "insuficiencia_cardiaca": {
+    "concepto": "ICC",
+    "regex": "((falla|insuficiencia) card(í|i)aca( congestiva)?|ICC?(FEVI(l?r|c)?)?|MCD( con)? FEVI)"
+  },
+  "sindrome_metabolico": {
+    "concepto": "síndrome-x",
+    "regex": "(s(í|i)ndrome X)"
+  },
+  "hipertension_arterial": {
+    "concepto": "HTA",
+    "regex": "(hipertensi(ó|o)n( (dia|si)st(o|ó)lica| arterial)?|(presi(o|ó)n|tensi(o|ó)n) arterial( elevada| alta)s?|HTA)"
+  },
+  "cardiopatia_isquemica": {
+    "concepto": "cardiopatía-isquémica",
+    "regex": "(enfermedad( arterial)? coronaria|angina (de pecho|inestable)|(mio)?cardiopat(í|i)a isqu(é|e)mica( cr(ó|o)nica)?|s(í|i)ndrome coronario cr(ó|o)nico|i(ntervenci(ó|o)n )?c(oronaria )?p(ercut(á|a)nea)?|infarto de miocardio|stent farmacoactivo|s(fa|dcc)|iam((c|s)est)?)"
+  },
+  "ictus": {
+    "concepto": "ictus",
+    "regex": "(ictus|(accidente|derrame|ataque|infarto|embolia)s? (cerebr(ovascular(es)?|al))|ACV)"
+  },
+  "miocardiopatia": {
+    "concepto": "miocardiopatía-dilatada",
+    "regex": "(((miocardio|cardiomio)pat(í|i)a) ((en fase )?dilatada|hipertr(ó|o)fica|restrictiva|arritmog(é|e)nica|no compactada)|M(CD|HO)|amiloidosis cardiaca|displasia arritmog(é|e)nica del ventr(í|i)culo (derecho|drch?|dcho))"
+  },
+  "bloqueos_rama": {
+    "concepto": "bloqueo-rama",
+    "regex": "(bloqueo ((de )?(la )?rama( (izq(uierda)|izda?|derecha|dcha|drch))?|fascicular)|BC?R(D|I)(HH)?)"
+  },
+  "bloqueo_av": {
+    "concepto": "BAV",
+    "regex": "((bloqueo|disfunci(ó|o)n)(( del?)? nodo)? (a(uriculo|trio)?v(entricular)?|cardiaco)|BAVc?)"
+  },
+  "bradicardia": {
+    "concepto": "bradicardia",
+    "regex": "(bradi(cardia|arritmia)( sinusal)?|(ritmo|frecuencia) card(í|i)ac(a|o) (lent(a|o)|baj(a|o)))"
+  },
+  "contracciones_prematuras": {
+    "concepto": "contracciones-prematuras",
+    "regex": "((contracciones|latidos)( ventriculares| auriculares)? prematur(a|o)s|(extras(í|i)stoles?|ectopias?|taquicardias?)( ventricular(es)?| auricular(es)?)|extras(í|i)stoles?)"
+  },
+  "sinusal_coronaria": {
+    "concepto": "ENS",
+    "regex": "((disfunci(ó|o)n|enfermedad|s(í|i)ndrome|disautonom(í|i)a)( del)? (nodo( sinusal)?|sinusal)|s(í|i)ndrome del seno enfermo|ENS)"
+  },
+  "valvula_mitral_reumaticas": {
+    "concepto": "enfermedad-valvular-reumatica",
+    "regex": "(((estenosis|insuficiencia) mitral|(e|i)m|enfermedad valvular) reum(á|a)tica)"
+  },
+  "IM": {
+    "concepto": "IM",
+    "regex": "((I\\.?M\\.?|(insuficiencia|regurgitaci(ó|o)n) mitral)( (leve|ligera|moderada|severa|grave))?)"
+  },
+  "EM": {
+    "concepto": "EM",
+    "regex": "(E\\.?M\\.?|(estenosis|limitaci(ó|o)n de apertura) mitral( (leve|ligera|moderada|severa|grave))?)"
+  },
+  "EAo": {
+    "concepto": "EAo",
+    "regex": "(E\\.?A\\.?o\\.?|(estenosis|limitaci(ó|o)n de apertura) a(ó|o)rtica( (leve|ligera|moderada|severa|grave))?)"
+  },
+  "IAo": {
+    "concepto": "IAo",
+    "regex": "(I\\.?A\\.?o\\.?|(insuficiencia|regurgitaci(ó|o)n) a(ó|o)rtica( (leve|ligera|moderada|severa|grave))?)"
+  },
+  "IT": {
+    "concepto": "IT",
+    "regex": "(I\\.?T\\.?|(insuficiencia|regurgitaci(ó|o)n) tric(ú|u)sp(í|i)de(a)?( (leve|ligera|moderada|severa|grave))?)"
+  },
+  "arteriopatia_periferica": {
+    "concepto": "arteriopatía-periférica",
+    "regex": "(((enfermedad|revascularización) (arterial|vascular)|vasculopat(í|i)a) perif(é|e)rica|bypass aortobifemoral)"
+  },
+  "FA": {
+    "concepto": "FA",
+    "regex": "(fibrilaci(o|ó)n auricular|arritmia completa|(A(\\.C\\.(X\\.)?F\\.|CX?F)A)|aleteo auricular|fibrilofl((u|ú)tt?)er|F(\\.A\\.?|A)A?)",
+    "regex_2": "(episodios? parox(í|i)sticos? (de )?)?(fibrilaci(o|ó)n auricular|arritmia completa|(A(\\.C\\.(X\\.)?F\\.|CX?F)A)|aleteo auricular|fibrilofl((u|ú)tt?)er|F(\\.A\\.?|A))( (parox(i|í)stic(a|o)|per(man|sist)ente|cr(ó|o)nic(a|o)))?"
+  },
+  "paroxistica": {
+    "concepto": "paroxística",
+    "regex": "(parox(i|í)stic(a|o))"
+  },
+  "persistente": {
+    "concepto": "persistente",
+    "regex": "(persistente)"
+  },
+  "permanente": {
+    "concepto": "permanente",
+    "regex": "(permanente|cr(ó|o)nica)"
+  },
+  "ritmo_sinusal": {
+    "concepto": "RS",
+    "regex": "(RS|(ritmo )?sinusal|(basal )?normal|(sin|no) (hallazgos|alteraci(o|ó)n(es)?|anomal(í|i)as?)|ritmo auricular)"
+  },
+  "cardioversion": {
+    "concepto": "cardioversión",
+    "regex": "((?<!(taquicardia (auricular|intranodal|ventricular|parox(í|i)stica supraventricular)|fibrilaci(o|ó)n ventricular|fl(ú|u)t(t)?er|FV|T(A|PSV|IN|V(( polim(ó|o)rfica)|MNS|P)?))) cardiovertid(a|o)|(cardiover(si((ó|o)n(?:es)?)|tid(a|o))|CV[EQ])(?! (de|por) (taquicardia (auricular|intranodal|ventricular|parox(í|i)stica supraventricular)|fibrilaci(o|ó)n ventricular|fl(ú|u)t(t)?er|FV|T(A|PSV|IN|V(( polim(ó|o)rfica)|MNS|P)?))))"
+  },
+  "ablacion": {
+    "concepto": "ablación",
+    "regex": "(ablaci(ó|o)n(es)? (?!del? (N(odo )?A(uriculo )?V(entricular)?))|(?<!(N(odo )?A(uriculo )?V(entricular)?) )ablacionad(o|a))"
+  },
+  "ablacion_rdf": {
+    "concepto": "ablación-rdf",
+    "regex": "(ablaci(ó|o)n(es|ada)?( de v(í|i)a lenta)?( por| con| mediante)? (radiofrecuencia|rdf|rfa?))"
+  },
+  "crioablacion": {
+    "concepto": "crioablación",
+    "regex": "(crioablaci(ó|o)n(ada|es)?)"
+  },
+  "marcapasos_dai": {
+    "concepto": "marcapasos",
+    "regex": "(marcapasos( cardiaco)?|dai)"
+  },
+  "c01b": {
+    "concepto": "antiarritmico",
+    "regex": "((apo|fle)card|(amiodar|dronedar|propafen)ona|flecainida|trangorex|multa(q|k)|rytmonorm)"
+  }
+}
